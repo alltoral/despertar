@@ -8,7 +8,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Despertar · Raio-X Biomecânico">
 <meta property="og:description" content="O método completo para mapear e corrigir, em casa, o padrão de movimento que faz a sua dor voltar. 12 checkpoints, 15 minutos por dia.">
-<meta property="og:image" content="https://alltoral.github.io/corpo_primaz/assets/douglas-jaleco.jpg">
+<meta property="og:image" content="https://alltoral.github.io/despertar/assets/douglas-jaleco.jpg">
 <link rel="icon" type="image/png" href="assets/simbolo.png">
 <link rel="apple-touch-icon" href="assets/simbolo.png">
 <meta name="description" content="Despertar: o método completo do Raio-X Biomecânico para mapear e corrigir, em casa, o padrão de movimento que faz a sua dor voltar. 12 checkpoints, 15 minutos por dia.">
@@ -57,7 +57,9 @@ p{margin:0}
 .cabeca{display:flex;flex-direction:column;gap:14px;max-width:760px}
 .cabeca p{color:var(--apoio);font-size:18px}
 .cabeca.centro{margin-inline:auto;text-align:center;align-items:center}
-section{padding-block:clamp(72px, 11vw, 128px);position:relative}
+section{padding-block:clamp(64px, 8vw, 104px);position:relative}
+#planos{padding-bottom:clamp(40px, 5vw, 64px)}
+#planos + section{padding-top:clamp(48px, 6vw, 72px)}
 .faixa{background:linear-gradient(180deg,var(--faixa),var(--carvao-2))}
 .faixa-ambar{background:radial-gradient(120% 80% at 50% 0%,rgba(212,160,23,.16),transparent 60%),linear-gradient(180deg,#1A1710,var(--carvao))}
 
@@ -289,12 +291,12 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
 
 @media (min-width:760px){
   .hero{min-height:min(88vh, 820px);align-items:center}
-  .hero-foto{inset:0;width:100%;height:100%}
-  .hero-texto{max-width:min(500px, 40vw)}
+  .hero-foto{inset:0 0 0 30%;width:auto;height:100%}
+  .hero-texto{max-width:min(470px, 37vw)}
   .hero h1{font-size:clamp(42px, 4.6vw, 66px)}
   .hero-sub{font-size:17px}
-  .hero-foto img{object-position:62% 50%;-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent 100%);mask-image:linear-gradient(180deg,#000 82%,transparent 100%)}
-  .hero-foto::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 0% 50%,rgba(10,10,9,.62),transparent 70%)}
+  .hero-foto img{object-position:70% 50%;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 30%),linear-gradient(180deg,#000 82%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0%,#000 30%),linear-gradient(180deg,#000 82%,transparent 100%);mask-composite:intersect}
+  .hero-foto::after{display:none}
   .hero .wrap{padding-block:clamp(48px, 7vw, 96px)}
   .hero-texto{gap:18px}
   .hero::before{display:none}
@@ -602,7 +604,7 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
 (function(){
   /* Troque pelos links reais de checkout antes de publicar */
   var CHECKOUT = { despertar:'', leveza:'', liberdade:'' };
-  var LINK_CODIGO_DA_DOR = 'https://alltoral.github.io/corpo_primaz/codigo-da-dor/';
+  var LINK_CODIGO_DA_DOR = 'https://alltoral.github.io/codigo-da-dor/';
 
   document.querySelectorAll('[data-checkout]').forEach(function(a){ var u = CHECKOUT[a.getAttribute('data-checkout')]; if (u){ a.href = u; a.target = '_blank'; a.rel = 'noopener'; } });
   document.querySelectorAll('[data-codigo]').forEach(function(a){ a.href = LINK_CODIGO_DA_DOR; a.target = '_blank'; a.rel = 'noopener'; });
