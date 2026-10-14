@@ -220,21 +220,29 @@ blockquote{margin:0;padding-left:20px;border-left:2px solid var(--ambar);font-fa
 .selo{position:absolute;top:-13px;left:24px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:var(--ambar);color:var(--tinta)}
 .plano-nome{font-family:var(--marca);font-size:24px;font-weight:700;letter-spacing:.1em}
 .plano-desc{font-size:15px;color:var(--apoio);min-height:3em}
-.valor{display:flex;align-items:baseline;gap:6px;font-variant-numeric:tabular-nums}
+.valor{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px;font-variant-numeric:tabular-nums}
+.valor .vezes{width:100%;font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--apoio);margin-bottom:-4px}
 .valor small{font-size:20px;color:var(--apoio);font-weight:600}
 .valor strong{font-size:clamp(50px, 12vw, 64px);line-height:1;font-weight:800;letter-spacing:-.04em}
 .plano.destaque .valor strong{background:linear-gradient(180deg,#FFF3CF,var(--ambar-claro) 60%,var(--ambar));-webkit-background-clip:text;background-clip:text;color:transparent}
 .valor-nota{font-size:14px;color:var(--mudo);margin-top:-10px}
+.valor-nota b{color:var(--osso);font-weight:600}
 .plano ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;flex:1}
 .plano li{display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start;font-size:15px;color:var(--osso)}
 .plano li svg{margin-top:4px}
 .plano li.base{color:var(--apoio)}
 .plano .btn{width:100%}
 .upgrade{font-size:14px;color:var(--ambar-claro);text-align:center}
-.garantia{display:flex;gap:18px;align-items:center;padding:22px 24px;border-radius:16px;background:rgba(212,160,23,.08);border:1px dashed rgba(212,160,23,.5)}
+.garantia{display:flex;gap:18px;align-items:flex-start;padding:22px 24px;border-radius:16px;background:rgba(212,160,23,.08);border:1px dashed rgba(212,160,23,.5)}
 .garantia svg{flex:none}
 .garantia b{display:block;font-size:18px;font-weight:700}
 .garantia span{font-size:15px;color:var(--apoio)}
+.gar-texto{display:flex;flex-direction:column;gap:6px;min-width:0;flex:1}
+.gar-passos{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
+.gar-passos li{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:12px;background:rgba(15,15,14,.55);border:1px solid rgba(212,160,23,.25)}
+.gar-passos i{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:14px;background:var(--ambar);color:var(--tinta)}
+.gar-passos div{font-size:15px;color:var(--apoio);line-height:1.4}
+.gar-passos strong{display:block;font-size:16px;color:var(--texto);font-weight:700}
 .tabela-wrap{overflow-x:auto;border:1px solid var(--linha);border-radius:14px;background:var(--carvao-2)}
 table{width:100%;border-collapse:collapse;font-size:15px;min-width:460px;font-variant-numeric:tabular-nums}
 th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--linha)}
@@ -315,6 +323,7 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
   .planos{grid-template-columns:1.12fr 1fr 1fr}
   .plano.destaque{transform:translateY(-12px)}
   .duas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gar-passos{grid-template-columns:repeat(3,minmax(0,1fr))}
   .barra-cta{display:none}
   footer{padding-block:48px}
 }
@@ -348,7 +357,7 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
       <p class="hero-sub">O <strong>método completo</strong> para mapear e corrigir, em casa, o padrão de movimento que faz a sua dor voltar. <strong>12 checkpoints</strong>, 15 minutos por dia, com critério para saber se passou ou não.</p>
       <div class="hero-acoes">
         <a class="btn brilha" href="#planos" data-checkout="despertar">Quero o Despertar <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
-        <small>R$ 497 · acesso por 12 meses</small>
+        <small>12x de R$ 41,42 ou R$ 497 à vista</small>
       </div>
       <p class="com"><i></i><span>Com <b>Douglas Toral de Souza</b>, <span class="caps">FISIOTERAPEUTA</span></span></p>
     </div>
@@ -472,8 +481,8 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
         <span class="selo">Comece aqui</span>
         <div class="plano-nome">DESPERTAR</div>
         <p class="plano-desc">O método completo: todas as avaliações e todos os exercícios de correção.</p>
-        <div class="valor"><small>R$</small><strong>497</strong></div>
-        <p class="valor-nota">Pagamento único · 12 meses de acesso</p>
+        <div class="valor"><span class="vezes">12x de</span><small>R$</small><strong>41,42</strong></div>
+        <p class="valor-nota">ou <b>R$ 497</b> à vista · 12 meses de acesso</p>
         <ul>
           <li><svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6.5" fill="none" stroke="#D4A017" stroke-width="2.2"/></svg>Os 12 checkpoints, na ordem certa</li>
           <li><svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6.5" fill="none" stroke="#D4A017" stroke-width="2.2"/></svg>Todos os exercícios de correção</li>
@@ -486,8 +495,8 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
       <article class="plano rv" style="--d:.1s">
         <div class="plano-nome">LEVEZA</div>
         <p class="plano-desc">O método completo com suporte funcional e reeducação de movimento.</p>
-        <div class="valor"><small>R$</small><strong>997</strong></div>
-        <p class="valor-nota">Pagamento único · 12 meses de acesso</p>
+        <div class="valor"><span class="vezes">12x de</span><small>R$</small><strong>83,08</strong></div>
+        <p class="valor-nota">ou <b>R$ 997</b> à vista · 12 meses de acesso</p>
         <ul>
           <li class="base"><svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6.5" fill="none" stroke="#857F73" stroke-width="2.2"/></svg>Tudo do Despertar</li>
           <li><svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><path d="M11 4v14M4 11h14" stroke="#D4A017" stroke-width="2.2"/></svg>Kinesio tape para estabilizar durante a correção</li>
@@ -500,8 +509,8 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
       <article class="plano rv" style="--d:.2s">
         <div class="plano-nome">LIBERDADE</div>
         <p class="plano-desc">O método completo com todas as camadas e auditoria individual.</p>
-        <div class="valor"><small>R$</small><strong>1.997</strong></div>
-        <p class="valor-nota">Pagamento único · 12 meses de acesso</p>
+        <div class="valor"><span class="vezes">12x de</span><small>R$</small><strong>166,42</strong></div>
+        <p class="valor-nota">ou <b>R$ 1.997</b> à vista · 12 meses de acesso</p>
         <ul>
           <li class="base"><svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6.5" fill="none" stroke="#857F73" stroke-width="2.2"/></svg>Tudo do Leveza</li>
           <li><svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><path d="M11 4v14M4 11h14" stroke="#D4A017" stroke-width="2.2"/></svg>Avaliação energética (MTC) e acupontos</li>
@@ -515,7 +524,13 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
     </div>
     <div class="garantia rv">
       <svg width="48" height="48" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4l13 5v9c0 8.5-5.6 15.4-13 18-7.4-2.6-13-9.5-13-18V9z" fill="rgba(212,160,23,.15)" stroke="#D4A017" stroke-width="1.5"/><path d="M14 20l4 4 8-9" fill="none" stroke="#D4A017" stroke-width="2"/></svg>
-      <div><b>7 dias de garantia</b><span>Se nos primeiros 7 dias você sentir que não é para você, devolvemos o valor pago.</span></div>
+      <div class="gar-texto"><b>15 dias de garantia, com conversa individual</b><span>Você testa o método por 15 dias. Depois disso, faz uma videochamada com o Douglas e decide com calma.</span>
+        <ol class="gar-passos">
+          <li><i>1</i><div><strong>15 dias</strong>para testar o método em casa</div></li>
+          <li><i>2</i><div><strong>Videochamada</strong>com o Douglas para avaliar o seu momento</div></li>
+          <li><i>3</i><div><strong>Você decide</strong>seguir no método ou cancelar com o valor devolvido</div></li>
+        </ol>
+      </div>
     </div>
     <p class="frase rv">Você não compra partes de um tratamento. <span class="virada">Você compra o método completo e adiciona camadas de suporte conforme sua necessidade.</span></p>
     <div class="tabela-wrap rv">
@@ -569,6 +584,8 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
       <details><summary>Serve para a minha dor?</summary><p>O Despertar é para dores musculoesqueléticas persistentes, como lombar, pescoço, joelho e ombro, que melhoram e voltam. Se você tem algum sinal de alerta, procure uma avaliação presencial antes de começar.</p></details>
       <details><summary>Isso substitui o médico ou a fisioterapia?</summary><p>Não. O Despertar é educação postural e autoavaliação funcional guiada. Não é atendimento médico nem consulta de fisioterapia, e não substitui a avaliação de um profissional de saúde.</p></details>
       <details><summary>E se eu reprovar várias vezes no mesmo ponto?</summary><p>Faz parte do processo. Cada reprovação mostra onde está a sobrecarga. Você segue o protocolo daquele ponto, re-testa, e o próximo checkpoint só abre quando o anterior estiver dentro da referência.</p></details>
+      <details><summary>Como funciona a garantia?</summary><p>Você tem 15 dias para testar o método. Depois desse período, faz uma videochamada com o Douglas para avaliar o seu momento. Depois da conversa, você escolhe: seguir no método ou cancelar e receber o valor de volta.</p></details>
+      <details><summary>Posso parcelar?</summary><p>Pode. O Despertar sai em 12x de R$ 41,42 ou R$ 497 à vista. O Leveza em 12x de R$ 83,08 e o Liberdade em 12x de R$ 166,42.</p></details>
       <details><summary>Por quanto tempo tenho acesso?</summary><p>Por 12 meses. Depois disso, você pode renovar com 50% de desconto sobre o valor de tabela.</p></details>
       <details><summary>Posso adicionar as outras camadas depois?</summary><p>Pode. Nos primeiros 30 dias, tudo o que você pagou no Despertar vira crédito e você paga só a diferença: R$ 500 para o Leveza ou R$ 1.500 para o Liberdade. Depois do 30º dia, o crédito passa a ser de 50%.</p></details>
       <details><summary>Ainda não fiz o Código da Dor. Posso começar direto?</summary><p>Pode. Mas vale fazer o teste grátis antes: leva 5 minutos e mostra a sua primeira pista. <a href="#codigo" data-codigo>Fazer o Código da Dor</a></p></details>
@@ -582,7 +599,7 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
     <span class="rotulo rv">Raio-X Biomecânico · Despertar</span>
     <h2 class="rv">Sua dor tem um mapa. <span class="virada">Comece pelo primeiro checkpoint.</span></h2>
     <a class="btn brilha rv" href="#planos" data-checkout="despertar">Quero o Despertar <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
-    <small class="rv">R$ 497 · 7 dias de garantia · acesso por 12 meses</small>
+    <small class="rv">12x de R$ 41,42 ou R$ 497 à vista · 15 dias de garantia</small>
   </div>
 </section>
 
@@ -600,7 +617,7 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
 </footer>
 
 <div class="barra-cta" id="barra" aria-hidden="true">
-  <div><b>DESPERTAR</b><span>R$ 497 · 12 meses</span></div>
+  <div><b>DESPERTAR</b><span>12x de R$ 41,42</span></div>
   <a class="btn" href="#planos" data-checkout="despertar" tabindex="-1">Quero começar</a>
 </div>
 
