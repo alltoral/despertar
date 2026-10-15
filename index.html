@@ -608,18 +608,18 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
   /* 12 checkpoints como grade de aulas */
   var NOS = ['Cabeça','Ombros','Mãos','Coluna','Quadris','Joelhos','Pés'];
   var CAPS = [
-    ['Mobilidade do quadril','Quadril',[4]],
-    ['Extensão e rotação torácica','Coluna',[3]],
-    ['Controle da báscula pélvica','Pelve',[3,4]],
-    ['Transverso e respiração','Centro do corpo',[3]],
-    ['Agachamento com as duas pernas','Pernas',[4,5]],
-    ['Mobilidade do tornozelo','Tornozelo',[6]],
-    ['Controle do joelho','Joelho',[5]],
-    ['Ombro e transição cervicotorácica','Ombro',[0,1]],
-    ['Cadeia posterior','Costas e pernas',[3,4,5]],
-    ['Cervical profunda','Pescoço',[0]],
-    ['Respiração costal baixa','Tórax',[3]],
-    ['Integração global','Corpo inteiro',[0,1,2,3,4,5,6]]
+    ['Postura parada','Postura',[0, 1, 3, 4]],
+    ['Análise da marcha','Pés e quadris',[4, 5, 6]],
+    ['Agachamento livre e acima da cabeça','Tornozelo e quadril',[1, 4, 5, 6]],
+    ['Testes de mobilidade','Quadril, coluna e ombro',[1, 3, 4]],
+    ['Mobilidade neural','Nervos das pernas',[3, 4, 5]],
+    ['Estabilidade do core','Centro do corpo',[3, 4]],
+    ['Controle em uma perna','Glúteo e joelho',[4, 5, 6]],
+    ['Membros superiores','Ombros e escápulas',[1, 2]],
+    ['Alta demanda','Saltos e aterrissagem',[4, 5, 6]],
+    ['Avaliação energética','MTC',[0, 1, 2, 3, 4, 5, 6]],
+    ['Correlação dento-neural','Mandíbula e cervical',[0]],
+    ['Mobilização Y e W','Ombros e coluna',[1, 3]]
   ];
   var caps = document.getElementById('caps');
   caps.innerHTML = CAPS.map(function(c,i){
