@@ -11,7 +11,7 @@
 <meta property="og:image" content="https://alltoral.github.io/despertar/assets/douglas-jaleco.jpg">
 <link rel="icon" type="image/png" href="assets/simbolo.png">
 <link rel="apple-touch-icon" href="assets/simbolo.png">
-<meta name="description" content="Liberdade: o método completo do Raio-X Biomecânico para mapear e corrigir, em casa, o padrão de movimento que faz a sua dor voltar. 12 checkpoints, 15 minutos por dia.">
+<meta name="description" content="Raio-X Biomecânico: o método completo para mapear e corrigir, em casa, o padrão de movimento que faz a sua dor voltar. 12 checkpoints, 15 minutos por dia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap">
@@ -234,6 +234,8 @@ blockquote{margin:0;padding-left:20px;border-left:2px solid var(--ambar);font-fa
 .plano li.base{color:var(--apoio)}
 .plano .btn{width:100%}
 .upgrade{font-size:14px;color:var(--ambar-claro);text-align:center}
+.ast{font-size:.4em;vertical-align:super;color:var(--ambar-claro);margin-left:2px}
+.juros{font-size:12px;color:var(--mudo);margin-top:-10px;line-height:1.4}
 .plano-grupo{font-family:var(--marca);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ambar-claro);margin:4px 0 -6px}
 .planos.unico{grid-template-columns:minmax(0,600px);justify-content:center}
 .garantia{display:flex;gap:18px;align-items:flex-start;padding:22px 24px;border-radius:16px;background:rgba(212,160,23,.08);border:1px dashed rgba(212,160,23,.5)}
@@ -340,6 +342,16 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
 .credito{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding-top:18px;border-top:1px solid var(--linha);font-size:13px;letter-spacing:.04em;color:var(--mudo);text-decoration:none;align-self:flex-start}
 .credito b{font-family:var(--marca);font-weight:600;letter-spacing:.2em;color:var(--apoio)}
 .credito:hover b{color:var(--ambar)}
+
+/* Downsell na saída */
+.saida{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(8,8,7,.78);backdrop-filter:blur(6px)}
+.saida.on{display:flex;animation:sobe .45s var(--ease) both}
+.saida-box{position:relative;width:100%;max-width:520px;border-radius:22px;padding:30px 24px 24px;background:linear-gradient(170deg,#2E2716,#171512 60%);border:1px solid rgba(212,160,23,.45);box-shadow:0 40px 90px -30px rgba(212,160,23,.5);display:flex;flex-direction:column;gap:14px}
+.saida-box h2{font-size:clamp(26px,6vw,34px);line-height:1.08}
+.saida-box p{color:var(--apoio);font-size:15px}
+.saida-box .aviso{font-size:14px;color:var(--ambar-claro)}
+.saida-fechar{position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;background:transparent;border:0;color:var(--apoio);font-size:26px;line-height:1;cursor:pointer}
+.saida-nao{background:none;border:0;color:var(--mudo);font:inherit;font-size:14px;text-decoration:underline;cursor:pointer;padding:8px}
 </style>
 </head>
 <body>
@@ -357,12 +369,12 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
   <div class="hero-foto"><picture><source media="(min-width:760px)" srcset="assets/hero-desktop.jpg" width="1376" height="768"><img src="assets/hero-mobile.jpg" alt="Mãos segurando o celular com o vídeo de um agachamento em uma perna ao lado do gabarito dourado do movimento" width="896" height="1200" fetchpriority="high"></picture></div>
   <div class="wrap">
     <div class="hero-texto">
-      <span class="rotulo">Raio-X Biomecânico · Liberdade</span>
+      <span class="rotulo">Corpo Primaz · Raio-X Biomecânico</span>
       <h1><span class="linha"><span>A dor não começa</span></span><span class="linha"><span>onde dói.</span></span><span class="virada">Ela começa no movimento.</span></h1>
       <p class="hero-sub">O <strong>método completo</strong> para mapear e corrigir, em casa, o padrão de movimento que faz a sua dor voltar. <strong>12 checkpoints</strong>, 15 minutos por dia, com critério para saber se passou ou não.</p>
       <div class="hero-acoes">
-        <a class="btn brilha" href="#planos" data-checkout="liberdade">Quero o Raio-X Biomecânico <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
-        <small>12x de R$ 166,42 ou R$ 1.997 à vista</small>
+        <a class="btn brilha" href="#planos" data-checkout="raiox">Quero o Raio-X Biomecânico <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+        <small>R$ 1.997 à vista ou 12x de R$ 206,54*</small>
       </div>
       <p class="com"><i></i><span>Com <b>Douglas Toral de Souza</b>, <span class="caps">FISIOTERAPEUTA</span></span></p>
     </div>
@@ -417,7 +429,7 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
     <div class="pista rv">
       <div class="pista-tag"><span>PISTA 01</span><i></i></div>
       <h2 style="font-size:clamp(28px, 5.6vw, 42px)">Reprovou em algum teste do Código da Dor?</h2>
-      <p class="apoio" style="font-size:18px">Então você já achou uma pista. <span class="virada" style="font-size:1.15em">E pista já dá direção.</span> O Liberdade leva você pelo mapa inteiro, ponto por ponto, até o padrão que gera a sobrecarga.</p>
+      <p class="apoio" style="font-size:18px">Então você já achou uma pista. <span class="virada" style="font-size:1.15em">E pista já dá direção.</span> O Raio-X Biomecânico leva você pelo mapa inteiro, ponto por ponto, até o padrão que gera a sobrecarga.</p>
       <a class="link" href="#codigo" data-codigo>Ainda não fez? Faça o Código da Dor grátis em 5 minutos</a>
     </div>
   </div>
@@ -480,14 +492,15 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
 <!-- PLANOS -->
 <section id="planos" class="faixa-ambar">
   <div class="wrap" style="display:flex;flex-direction:column;gap:44px">
-    <div class="cabeca centro rv"><span class="rotulo">Plano Liberdade</span><h2>Tudo em um só plano, <span class="virada">do primeiro checkpoint à auditoria individual.</span></h2></div>
+    <div class="cabeca centro rv"><span class="rotulo">Raio-X Biomecânico</span><h2>Tudo em um só plano, <span class="virada">do primeiro checkpoint à auditoria individual.</span></h2></div>
     <div class="planos unico">
       <article class="plano destaque rv">
         <span class="selo">Plano único</span>
-        <div class="plano-nome">LIBERDADE</div>
+        <div class="plano-nome">RAIO-X BIOMECÂNICO</div>
         <p class="plano-desc">O método completo com todas as camadas de suporte e auditoria individual.</p>
-        <div class="valor"><span class="vezes">12x de</span><small>R$</small><strong>166,42</strong></div>
+        <div class="valor"><span class="vezes">12x de</span><small>R$</small><strong>206,54</strong><sup class="ast">*</sup></div>
         <p class="valor-nota">ou <b>R$ 1.997</b> à vista · 12 meses de acesso</p>
+        <p class="juros">*Parcelamento com juros da plataforma de pagamento (3,49% ao mês). O valor exato aparece no checkout.</p>
         <p class="plano-grupo">O método</p>
         <ul>
           <li><svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 11.5l4.5 4.5L18 6.5" fill="none" stroke="#D4A017" stroke-width="2.2"/></svg>Os 12 checkpoints, na ordem certa</li>
@@ -506,7 +519,7 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
           <li><svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><path d="M11 4v14M4 11h14" stroke="#D4A017" stroke-width="2.2"/></svg>4 auditorias individuais em vídeo</li>
           <li><svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><path d="M11 4v14M4 11h14" stroke="#D4A017" stroke-width="2.2"/></svg>Prioridade no suporte</li>
         </ul>
-        <a class="btn brilha" href="#planos" data-checkout="liberdade">Quero o Raio-X Biomecânico</a>
+        <a class="btn brilha" href="#planos" data-checkout="raiox">Quero o Raio-X Biomecânico</a>
       </article>
     </div>
     <div class="garantia rv">
@@ -527,7 +540,7 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
 <!-- PARA QUEM É -->
 <section>
   <div class="wrap" style="display:flex;flex-direction:column;gap:40px">
-    <div class="cabeca rv"><span class="rotulo">Antes de decidir</span><h2>Para quem é o Liberdade</h2></div>
+    <div class="cabeca rv"><span class="rotulo">Antes de decidir</span><h2>Para quem é o Raio-X Biomecânico</h2></div>
     <div class="duas">
       <div class="caixa rv">
         <h3>É para você se</h3>
@@ -558,11 +571,11 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
     <div class="faq">
       <details><summary>Preciso de algum equipamento?</summary><p>Não. Você precisa do celular para filmar, de uma parede lisa, de uma cama firme e de um espaço livre de mais ou menos 2 x 2 metros.</p></details>
       <details><summary>Quanto tempo por dia?</summary><p>Cerca de 15 minutos. O método foi pensado para caber na rotina de quem trabalha e cuida da casa.</p></details>
-      <details><summary>Serve para a minha dor?</summary><p>O Liberdade é para dores musculoesqueléticas persistentes, como lombar, pescoço, joelho e ombro, que melhoram e voltam. Se você tem algum sinal de alerta, procure uma avaliação presencial antes de começar.</p></details>
-      <details><summary>Isso substitui o médico ou a fisioterapia?</summary><p>Não. O Liberdade é educação postural e autoavaliação funcional guiada. Não é atendimento médico nem consulta de fisioterapia, e não substitui a avaliação de um profissional de saúde.</p></details>
+      <details><summary>Serve para a minha dor?</summary><p>O Raio-X Biomecânico é para dores musculoesqueléticas persistentes, como lombar, pescoço, joelho e ombro, que melhoram e voltam. Se você tem algum sinal de alerta, procure uma avaliação presencial antes de começar.</p></details>
+      <details><summary>Isso substitui o médico ou a fisioterapia?</summary><p>Não. O Raio-X Biomecânico é educação postural e autoavaliação funcional guiada. Não é atendimento médico nem consulta de fisioterapia, e não substitui a avaliação de um profissional de saúde.</p></details>
       <details><summary>E se eu reprovar várias vezes no mesmo ponto?</summary><p>Faz parte do processo. Cada reprovação mostra onde está a sobrecarga. Você segue o protocolo daquele ponto, re-testa, e o próximo checkpoint só abre quando o anterior estiver dentro da referência.</p></details>
       <details><summary>Como funciona a garantia?</summary><p>Você tem 15 dias para testar o método. Depois desse período, faz uma videochamada com o Douglas para avaliar o seu momento. Depois da conversa, você escolhe: seguir no método ou cancelar e receber o valor de volta.</p></details>
-      <details><summary>Posso parcelar?</summary><p>Pode. O Liberdade sai em 12x de R$ 166,42 ou R$ 1.997 à vista.</p></details>
+      <details><summary>Posso parcelar?</summary><p>Pode. Sai por R$ 1.997 à vista ou em até 12x de R$ 206,54 no cartão. O parcelamento tem os juros da plataforma de pagamento, de 3,49% ao mês, e o valor exato aparece no checkout.</p></details>
       <details><summary>Por quanto tempo tenho acesso?</summary><p>Por 12 meses. Depois disso, você pode renovar com 50% de desconto sobre o valor de tabela.</p></details>
       <details><summary>Ainda não fiz o Código da Dor. Posso começar direto?</summary><p>Pode. Mas vale fazer o teste grátis antes: leva 5 minutos e mostra a sua primeira pista. <a href="#codigo" data-codigo>Fazer o Código da Dor</a></p></details>
     </div>
@@ -572,10 +585,10 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
 <!-- FINAL -->
 <section class="final">
   <div class="wrap">
-    <span class="rotulo rv">Raio-X Biomecânico · Liberdade</span>
+    <span class="rotulo rv">Corpo Primaz · Raio-X Biomecânico</span>
     <h2 class="rv">Sua dor tem um mapa. <span class="virada">Comece pelo primeiro checkpoint.</span></h2>
-    <a class="btn brilha rv" href="#planos" data-checkout="liberdade">Quero o Raio-X Biomecânico <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
-    <small class="rv">12x de R$ 166,42 ou R$ 1.997 à vista · 15 dias de garantia</small>
+    <a class="btn brilha rv" href="#planos" data-checkout="raiox">Quero o Raio-X Biomecânico <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+    <small class="rv">R$ 1.997 à vista ou 12x de R$ 206,54* · 15 dias de garantia</small>
   </div>
 </section>
 
@@ -592,15 +605,28 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
   </div>
 </footer>
 
+<div class="saida" id="saida" role="dialog" aria-modal="true" aria-labelledby="saida-titulo" aria-hidden="true">
+  <div class="saida-box">
+    <button class="saida-fechar" type="button" aria-label="Fechar" data-fechar>×</button>
+    <span class="rotulo">Antes de sair</span>
+    <h2 id="saida-titulo">Não é o momento para o completo? <span class="virada">Conheça o Raio-X Essencial.</span></h2>
+    <p>Os testes dos 12 checkpoints, os exercícios de correção e o kinesio tape, por R$ 1.000 à vista ou 12x de R$ 103,42*.</p>
+    <p class="aviso">No Essencial você estará sozinho na sua jornada, sem conversa individual nem auditorias.</p>
+    <a class="btn brilha" href="https://alltoral.github.io/raio-x-essencial/" data-essencial>Ver o Raio-X Essencial</a>
+    <button class="saida-nao" type="button" data-fechar>Prefiro continuar vendo o completo</button>
+    <p style="font-size:11px;color:var(--mudo)">*Parcelamento com juros da plataforma de pagamento.</p>
+  </div>
+</div>
+
 <div class="barra-cta" id="barra" aria-hidden="true">
-  <div><b>LIBERDADE</b><span>12x de R$ 166,42</span></div>
-  <a class="btn" href="#planos" data-checkout="liberdade" tabindex="-1">Quero começar</a>
+  <div><b>RAIO-X BIOMECÂNICO</b><span>12x de R$ 206,54*</span></div>
+  <a class="btn" href="#planos" data-checkout="raiox" tabindex="-1">Quero começar</a>
 </div>
 
 <script>
 (function(){
   /* Troque pelos links reais de checkout antes de publicar */
-  var CHECKOUT = { liberdade:'' };
+  var CHECKOUT = { raiox:'' };
   var LINK_CODIGO_DA_DOR = 'https://alltoral.github.io/codigo-da-dor/';
 
   document.querySelectorAll('[data-checkout]').forEach(function(a){ var u = CHECKOUT[a.getAttribute('data-checkout')]; if (u){ a.href = u; a.target = '_blank'; a.rel = 'noopener'; } });
@@ -663,6 +689,27 @@ footer{border-top:1px solid rgba(212,160,23,.25);padding-block:44px calc(44px + 
     new IntersectionObserver(function(e){ heroV = e[0].isIntersecting; atualizar(); }).observe(hero);
     new IntersectionObserver(function(e){ planosV = e[0].isIntersecting; atualizar(); }, {threshold:.05}).observe(planos);
   }
+
+  /* Downsell: aparece uma vez quando a pessoa tenta sair (mouse indo para fora no computador, ou rolando rápido para cima no celular depois de ver o plano) */
+  (function(){
+    var LINK_ESSENCIAL = 'https://alltoral.github.io/raio-x-essencial/';
+    var box = document.getElementById('saida'); if (!box) return;
+    box.querySelectorAll('[data-essencial]').forEach(function(a){ a.href = LINK_ESSENCIAL; });
+    var visto = false; try { visto = sessionStorage.getItem('rx-saida') === '1'; } catch(e){}
+    var viuPlano = false, comprou = false, ultimoY = window.scrollY, ultimoT = Date.now(), inicio = Date.now();
+    var pl = document.getElementById('planos');
+    if (pl && 'IntersectionObserver' in window) new IntersectionObserver(function(e){ if (e[0].isIntersecting) viuPlano = true; }, {threshold:.2}).observe(pl);
+    document.querySelectorAll('[data-checkout]').forEach(function(a){ a.addEventListener('click', function(){ if (a.getAttribute('href') !== '#planos') comprou = true; }); });
+    function abrir(){ if (visto || comprou || Date.now()-inicio < 8000) return; visto = true; try { sessionStorage.setItem('rx-saida','1'); } catch(e){}
+      box.classList.add('on'); box.setAttribute('aria-hidden','false'); var b = box.querySelector('.btn'); if (b) b.focus(); }
+    function fechar(){ box.classList.remove('on'); box.setAttribute('aria-hidden','true'); }
+    box.querySelectorAll('[data-fechar]').forEach(function(b){ b.addEventListener('click', fechar); });
+    box.addEventListener('click', function(e){ if (e.target === box) fechar(); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') fechar(); });
+    document.addEventListener('mouseout', function(e){ if (!e.relatedTarget && e.clientY <= 0) abrir(); });
+    window.addEventListener('scroll', function(){ var y = window.scrollY, t = Date.now(), v = (ultimoY - y) / Math.max(1, t - ultimoT);
+      if (viuPlano && v > 2.5 && y > 600) abrir(); ultimoY = y; ultimoT = t; }, {passive:true});
+  })();
 })();
 </script>
 </body>
