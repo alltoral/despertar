@@ -1032,8 +1032,16 @@ Interrompa imediatamente qualquer teste e procure atendimento presencial se apre
     var viuPlano = false, comprou = false, ultimoY = window.scrollY, ultimoT = Date.now(), inicio = Date.now();
     var pl = document.getElementById('planos');
     if (pl && 'IntersectionObserver' in window) new IntersectionObserver(function(e){ if (e[0].isIntersecting) viuPlano = true; }, {threshold:.2}).observe(pl);
-    document.querySelectorAll('[data-checkout]').forEach(function(a){ a.addEventListener('click', function(){ if (a.getAttribute('href') !== '#planos') comprou = true; }); });
-    function abrir(){ if (visto || comprou || Date.now()-inicio < 8000) return; visto = true; try { sessionStorage.setItem('rx-saida','1'); } catch(e){}
+    var saiuPara = 0;
+    document.querySelectorAll('[data-checkout]').forEach(function(a){ a.addEventListener('click', function(){ if (a.getAttribute('href') !== '#planos'){ comprou = true; saiuPara = Date.now(); } }); });
+    /* Inatividade: 2 segundos sem mexer na página */
+    var ocioso = null;
+    function reiniciarOcio(){ clearTimeout(ocioso); if (!visto) ocioso = setTimeout(function(){ abrir(); if (!visto) reiniciarOcio(); }, 2000); }
+    ['scroll','mousemove','touchstart','keydown','click','wheel'].forEach(function(ev){ window.addEventListener(ev, reiniciarOcio, {passive:true}); });
+    reiniciarOcio();
+    /* Voltou do checkout sem comprar: oferece o Essencial */
+    document.addEventListener('visibilitychange', function(){ if (document.visibilityState === 'visible' && saiuPara && Date.now() - saiuPara > 4000){ saiuPara = 0; comprou = false; abrir(); } });
+    function abrir(){ if (visto || comprou || Date.now()-inicio < 5000) return; visto = true; try { sessionStorage.setItem('rx-saida','1'); } catch(e){}
       box.classList.add('on'); box.setAttribute('aria-hidden','false'); var b = box.querySelector('.btn'); if (b) b.focus(); }
     function fechar(){ box.classList.remove('on'); box.setAttribute('aria-hidden','true'); }
     box.querySelectorAll('[data-fechar]').forEach(function(b){ b.addEventListener('click', fechar); });
