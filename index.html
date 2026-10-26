@@ -959,7 +959,7 @@ Interrompa imediatamente qualquer teste e procure atendimento presencial se apre
 <script>
 (function(){
   /* Troque pelos links reais de checkout antes de publicar */
-  var CHECKOUT = { raiox:'' };
+  var CHECKOUT = { raiox:'https://pay.herospark.com/raio-x-biomecanico-543740' };
   var LINK_CODIGO_DA_DOR = 'https://alltoral.github.io/codigo-da-dor/';
 
   document.querySelectorAll('[data-checkout]').forEach(function(a){ var u = CHECKOUT[a.getAttribute('data-checkout')]; if (u){ a.href = u; a.target = '_blank'; a.rel = 'noopener'; } });
